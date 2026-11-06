@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0033A1">
+<title>FA Martins Representações — Autopeças no Nordeste</title>
+<meta name="description" content="Assessoria e representação comercial de autopeças no Ceará, Piauí, Maranhão e Rio Grande do Norte. Conectamos fabricantes e distribuidores.">
+<link rel="canonical" href="https://famartins.com.br/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="FA Martins Representações">
+<meta property="og:url" content="https://famartins.com.br/">
+<meta property="og:title" content="FA Martins Representações — Autopeças no Nordeste">
+<meta property="og:description" content="Assessoria e representação comercial de autopeças no Ceará, Piauí, Maranhão e Rio Grande do Norte. Conectamos fabricantes e distribuidores.">
+<meta property="og:image" content="https://famartins.com.br/assets/fotos/visitas-01.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1278">
+<meta property="og:image:alt" content="Visita comercial da FA Martins a um distribuidor de autopeças.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FA Martins Representações — Autopeças no Nordeste">
+<meta name="twitter:description" content="Assessoria e representação comercial de autopeças no Ceará, Piauí, Maranhão e Rio Grande do Norte. Conectamos fabricantes e distribuidores.">
+<meta name="twitter:image" content="https://famartins.com.br/assets/fotos/visitas-01.jpg">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" type="image/webp" href="assets/fotos/hero-fundo.webp" fetchpriority="high">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "FA Martins Representações",
+  "description": "Assessoria e representação comercial no mercado atacadista de autopeças.",
+  "url": "https://famartins.com.br/",
+  "telephone": "+5585999214116",
+  "email": "famartins@famartins.com.br",
+  "logo": "https://famartins.com.br/assets/brand/logo-transparent.png",
+  "image": "https://famartins.com.br/assets/fotos/visitas-01.jpg",
+  "sameAs": [
+    "https://instagram.com/famartinsrepresentacoes"
+  ],
+  "areaServed": [
+    { "@type": "State", "name": "Ceará" },
+    { "@type": "State", "name": "Piauí" },
+    { "@type": "State", "name": "Maranhão" },
+    { "@type": "State", "name": "Rio Grande do Norte" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fortaleza",
+    "addressRegion": "CE",
+    "addressCountry": "BR"
+  },
+  "knowsAbout": ["Autopeças", "Representação comercial", "Atacado de autopeças", "Distribuição"]
+}
+</script>
+
+<style>
+/* ============================================================
+   1. RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ============================================================
+   2. TOKENS
+   Navy #0033A1 é a cor exata da marca (extraída do logo oficial).
+   A paleta foi validada em contraste: todos os pares de texto
+   listados abaixo passam WCAG AA (4.5:1) ou AAA.
+   ============================================================ */
+:root {
+  /* Marca */
+  --navy:      #0033A1;  /* cor oficial da marca */
+  --navy-deep: #00246F;
+  --navy-ink:  #00163D;
+
+  /* Neutros */
+  --graphite:  #1C1F26;
+  --steel:     #5A6472;
+  --hairline:  #DDE1E7;
+  --canvas:    #F5F6F8;
+  --surface:   #FFFFFF;
+
+  /* Texto sobre fundo escuro */
+  --on-navy:      #FFFFFF;
+  --on-navy-mid:  #B9C4D8;  /* 6.01:1 sobre --navy */
+  --on-navy-soft: #A3B1CA;  /* 4.88:1 sobre --navy */
+
+  /* Tipografia */
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* Geometria — Cantos retos, linguagem industrial */
+  --r-1: 2px;
+
+  /* Ritmo vertical — varia por seção para evitar uniformidade */
+  --container: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --section-py: clamp(4.5rem, 8vw, 7.5rem);
+  --header-h: 76px;
+
+  /* Movimento */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* ============================================================
+   3. BASE
+   ============================================================ */
+html { scroll-padding-top: calc(var(--header-h) + 1rem); }
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--graphite);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button, input, textarea, select { font: inherit; color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+  border-radius: var(--r-1);
+}
+.on-dark :focus-visible,
+.site-footer :focus-visible { outline-color: #FFFFFF; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: fixed;
+  left: .5rem;
+  top: .5rem;
+  z-index: 2000;
+  background: var(--navy);
+  color: #fff;
+  padding: .75rem 1.25rem;
+  font-size: .875rem;
+  font-weight: 600;
+  border-radius: var(--r-1);
+  transform: translateY(calc(-100% - 1.5rem));
+  transition: transform .2s var(--ease);
+}
+.skip-link:focus { transform: none; }
+/* o destino do skip link nao desenha anel: o container inteiro viraria um retangulo enorme */
+main:focus { outline: none; }
+
+/* ============================================================
+   4. TIPOGRAFIA
+   ============================================================ */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--navy);
+  text-wrap: balance;
+}
+
+.display {
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-weight: 800;
+  line-height: .98;
+  letter-spacing: -.032em;
+}
+
+.h2 {
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -.022em;
+}
+
+.h3 {
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.012em;
+}
+
+.lead {
+  font-size: clamp(1.02rem, 1.35vw, 1.175rem);
+  line-height: 1.7;
+  color: var(--steel);
+  max-width: 62ch;
+}
+
+/* Eyebrow com régua técnica — detalhe de catálogo industrial */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--steel);
+  margin-bottom: 1.25rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--navy);
+  flex: none;
+}
+.eyebrow--light { color: var(--on-navy-mid); }
+.eyebrow--light::before { background: var(--on-navy-mid); }
+
+/* Índice de seção — 01 / 02 / 03 */
+.sec-index {
+  font-family: var(--font-heading);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  color: #4D6AA3;
+}
+
+/* ============================================================
+   5. BOTÕES E LINKS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--font-body);
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  border: 1px solid transparent;
+  border-radius: var(--r-1);
+  padding: .9rem 1.6rem;
+  cursor: pointer;
+  transition: background-color .25s var(--ease), color .25s var(--ease),
+              border-color .25s var(--ease), transform .25s var(--ease);
+}
+.btn svg { width: 17px; height: 17px; flex: none; }
+
+.btn--primary { background: var(--navy); color: #fff; }
+.btn--primary:hover { background: var(--navy-deep); transform: translateY(-1px); }
+
+.btn--ghost { background: transparent; color: var(--navy); border-color: var(--hairline); }
+.btn--ghost:hover { border-color: var(--navy); background: var(--canvas); }
+
+.btn--on-dark { background: #fff; color: var(--navy); }
+.btn--on-dark:hover { background: var(--on-navy-mid); transform: translateY(-1px); }
+
+.btn--outline-dark { background: transparent; color: #fff; border-color: rgba(255,255,255,.32); }
+.btn--outline-dark:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+/* Link com sublinhado animado */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--navy);
+  padding-block: .25rem;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .35s var(--ease), gap .35s var(--ease);
+}
+.link-arrow:hover { background-size: 100% 1px; gap: .8rem; }
+.link-arrow svg { width: 15px; height: 15px; }
+
+/* ============================================================
+   6. HEADER
+   ============================================================ */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  height: var(--header-h);
+  background: var(--surface);
+  border-bottom: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  transition: border-color .3s, background-color .3s;
+}
+.site-header.is-stuck { border-bottom-color: var(--hairline); box-shadow: 0 1px 0 rgba(0,22,61,.04); }
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand { display: flex; align-items: center; flex: none; }
+.brand img { height: 46px; width: auto; }
+
+.nav { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2rem); }
+
+.nav__list { display: flex; align-items: center; gap: clamp(.85rem, 1.8vw, 1.75rem); }
+
+.nav__list a {
+  position: relative;
+  display: block;
+  padding-block: .4rem;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  transition: color .25s var(--ease);
+}
+.nav__list a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: var(--navy);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s var(--ease);
+}
+.nav__list a:hover { color: var(--navy); }
+.nav__list a:hover::after,
+.nav__list a[aria-current="true"]::after { transform: scaleX(1); }
+.nav__list a[aria-current="true"] { color: var(--navy); }
+
+.nav__toggle {
+  display: none;
+  width: 44px; height: 44px;
+  background: none;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-1);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.nav__toggle span {
+  display: block;
+  width: 18px; height: 1.5px;
+  background: var(--navy);
+  transition: transform .3s var(--ease), opacity .2s linear;
+}
+.nav__toggle span + span { margin-top: 5px; }
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ============================================================
+   7. HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  background-color: var(--navy-ink);
+  background-image: url("assets/fotos/hero-fundo.webp");
+  background-size: cover;
+  background-position: center;
+  color: var(--on-navy);
+  padding-top: calc(var(--header-h) + clamp(3rem, 7vw, 6rem));
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Malha técnica de fundo —Referência de desenho de engenharia */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    repeating-linear-gradient(to right, rgba(255,255,255,.05) 0 1px, transparent 1px 88px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,.04) 0 1px, transparent 1px 88px);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.35) 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.35) 70%, transparent 100%);
+}
+/* Véu navy sobre a imagem de fundo — garante contraste do texto */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(120% 90% at 88% 12%, rgba(0,51,161,.55) 0%, transparent 62%),
+    linear-gradient(168deg, rgba(0,22,61,.88) 0%, rgba(0,36,111,.78) 52%, rgba(0,27,77,.9) 100%);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+.hero__copy { max-width: 820px; }
+
+.hero__title { color: #fff; margin-bottom: 1.5rem; }
+.hero__title em { font-style: normal; color: var(--on-navy-mid); }
+
+.hero__lead {
+  color: var(--on-navy-mid);
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  line-height: 1.72;
+  max-width: 62ch;
+  margin-inline: auto;
+  margin-bottom: 2.25rem;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem 1.5rem; }
+.hero__actions .link-arrow { color: #fff; }
+
+/* Trilho de cobertura */
+.coverage-rail {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid rgba(255,255,255,.16);
+  border-bottom: 1px solid rgba(255,255,255,.16);
+}
+.coverage-rail ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.coverage-rail li {
+  padding: 1.1rem .5rem 1.1rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: .7rem;
+}
+.coverage-rail li + li { padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,.14); }
+.coverage-rail .uf {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: #fff;
+}
+.coverage-rail .uf-label {
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--on-navy-soft);
+}
+
+/* ============================================================
+   8. SEÇÕES
+   ============================================================ */
+.section { padding-block: var(--section-py); }
+.section--canvas { background: var(--canvas); }
+.section--dark { background: var(--navy-ink); color: var(--on-navy); }
+.section--dark .h2, .section--dark .h3 { color: #fff; }
+.section--dark .lead { color: var(--on-navy-mid); }
+
+.section-head { margin-bottom: clamp(2.5rem, 4.5vw, 3.75rem); }
+.section-head .h2 { margin-bottom: 1.25rem; }
+.section-head--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+}
+
+/* Grade editorial — texto e imagem */
+.editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.editorial__body p + p { margin-top: 1.15rem; }
+.editorial__body p { color: var(--steel); line-height: 1.78; }
+.editorial__body strong { color: var(--graphite); font-weight: 600; }
+
+.figure { position: relative; }
+.figure--tall {
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+}
+.figure__frame { overflow: hidden; background: var(--canvas); }
+.figure__frame img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.figure figcaption {
+  margin-top: .85rem;
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--steel);
+  padding-top: .7rem;
+  border-top: 1px solid var(--hairline);
+}
+
+/* Linha de números — sem cards, apenas filetes */
+.number-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--hairline);
+}
+.number-row__item {
+  padding: 1.75rem 1.5rem 0 0;
+}
+.number-row__item + .number-row__item {
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--hairline);
+}
+.number-row__value {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--navy);
+  display: flex;
+  align-items: baseline;
+  gap: .1rem;
+}
+.number-row__value sup { font-size: .42em; font-weight: 700; top: -.9em; }
+.number-row__label {
+  margin-top: .7rem;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+.number-row__note { margin-top: .3rem; font-size: .8rem; color: var(--steel); }
+
+/* ============================================================
+   9. MARQUEE DE MARCAS
+   ============================================================ */
+.marquee-block { margin-top: clamp(2.5rem, 5vw, 4rem); }
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  --gap: clamp(2rem, 4vw, 3.5rem);
+  --fade: clamp(32px, 7vw, 96px);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 var(--fade), #000 calc(100% - var(--fade)), transparent);
+}
+.marquee + .marquee { margin-top: clamp(1.5rem, 2.5vw, 2.25rem); }
+
+.marquee__track { display: flex; width: max-content; }
+
+.marquee__group {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding-right: var(--gap);
+}
+
+.marquee__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .55rem;
+  flex: none;
+  transition: transform .45s var(--ease);
+}
+.marquee__logo {
+  display: block;
+  height: clamp(64px, 8vw, 104px);
+  max-width: 280px;
+  width: auto;
+  object-fit: contain;
+}
+.marquee__item:hover,
+.marquee__item:focus-within {
+  transform: scale(1.04);
+}
+
+/* The name always renders next to the logo: keeps the brand name legible
+   when the image fails to load, and avoids announcing the text twice. */
+.marquee__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(.72rem, 1.05vw, .82rem);
+  letter-spacing: .01em;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--navy);
+}
+
+/* Pausa do marquee fora da viewport */
+.marquee[data-inactive="true"] .marquee__track { animation-play-state: paused; }
+.marquee-block:hover .marquee__track,
+.marquee-block:focus-within .marquee__track { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .marquee[data-dir="ltr"] .marquee__track { animation: marquee-ltr var(--dur, 70s) linear infinite; }
+  .marquee[data-dir="rtl"] .marquee__track { animation: marquee-rtl var(--dur, 85s) linear infinite; }
+}
+@keyframes marquee-ltr { to   { transform: translate3d(-50%, 0, 0); } }
+@keyframes marquee-rtl { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+
+/* Sem movimento: lista estática e rolável — tudo continua acessível */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { -webkit-mask-image: none; mask-image: none; overflow-x: auto; }
+  .marquee__track { width: auto; flex-wrap: wrap; gap: 1rem 2rem; }
+  .marquee__group { flex-wrap: wrap; }
+  .marquee__group[aria-hidden="true"] { display: none; }
+  .marquee__item { opacity: 1; }
+  html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   10. DESTAQUES DE MARCA (editorial, sem cards genéricos)
+   ============================================================ */
+.feature-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+  border-top: 1px solid var(--hairline);
+}
+.feature-pair > * + * { border-left: 1px solid var(--hairline); }
+.feature {
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem) 0 0;
+}
+.feature + .feature { padding-left: clamp(1.5rem, 3vw, 2.5rem); }
+.feature__logo {
+  display: block;
+  height: clamp(60px, 7vw, 92px);
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+  object-position: left;
+  margin-bottom: .85rem;
+}
+.feature__kicker {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: .75rem;
+}
+.feature__name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  color: var(--navy);
+  margin-bottom: .85rem;
+}
+.feature__desc { font-size: .95rem; line-height: 1.72; color: var(--steel); }
+.feature__desc strong { color: var(--graphite); font-weight: 600; }
+
+/* ============================================================
+   11. LISTA DE DISTRIBUIDORES
+   ============================================================ */
+.client-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+.client-list__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .8rem;
+  padding: 1.4rem 1rem 1.5rem;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--hairline);
+  text-align: center;
+}
+.client-list__logo {
+  display: block;
+  height: clamp(64px, 8vw, 104px);
+  width: 100%;
+  max-width: 280px;
+  object-fit: contain;
+  transition: transform .45s var(--ease), filter .45s var(--ease);
+}
+.client-list__item:hover .client-list__logo { transform: scale(1.05); }
+.client-list__name {
+  font-family: var(--font-heading);
+  font-size: clamp(.86rem, 1.15vw, .98rem);
+  font-weight: 600;
+  letter-spacing: -.005em;
+  line-height: 1.35;
+  color: var(--graphite);
+  transition: color .25s var(--ease);
+}
+.client-list__item:hover .client-list__name { color: var(--navy); }
+
+/* ============================================================
+   12. MOSAICO DE FOTOS + LIGHTBOX
+   Desktop: 4 colunas x 3 linhas. O destaque ocupa 2x2 e as
+   outras 5 fotos fecham o restante sem buracos.
+   ============================================================ */
+.mosaic {
+  --mosaic-gap: clamp(12px, 1.4vw, 16px);
+  --mosaic-radius: clamp(8px, 1vw, 12px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* Linhas altas o bastante para as células 1x1 e 2x2 ficarem próximas
+     da proporção vertical das fotos. As 2x1 recebem o fundo desfocado. */
+  grid-auto-rows: clamp(220px, 28vw, 350px);
+  gap: var(--mosaic-gap);
+}
+
+.mosaic__item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--mosaic-radius);
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--navy-deep);
+  color: #fff;
+  text-align: left;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mosaic__item--feature { grid-column: 1 / 3; grid-row: 1 / 3; }
+.mosaic__item--pos-1   { grid-column: 3 / 4; grid-row: 1 / 2; }
+.mosaic__item--pos-2   { grid-column: 4 / 5; grid-row: 1 / 2; }
+.mosaic__item--pos-3   { grid-column: 3 / 5; grid-row: 2 / 3; }
+.mosaic__item--pos-4   { grid-column: 1 / 3; grid-row: 3 / 4; }
+.mosaic__item--pos-5   { grid-column: 3 / 5; grid-row: 3 / 4; }
+
+/* Fundo decorativo: mesma foto, ampliada e desfocada, preenchendo as sobras. */
+.mosaic__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px);
+  transform: scale(1.1);
+}
+
+/* Escurecimento leve sobre o fundo, sem afetar a foto nítida. */
+.mosaic__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, .25);
+  pointer-events: none;
+}
+
+/* Foto principal inteira, sem cortes. */
+.mosaic__photo {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform .3s var(--ease);
+}
+.mosaic__item:hover .mosaic__photo,
+.mosaic__item:focus-visible .mosaic__photo { transform: scale(1.05); }
+.mosaic__item:focus-visible { outline: 3px solid #fff; outline-offset: -3px; }
+
+/* Tablet: 2 colunas, destaque em largura total. */
+@media (max-width: 1024px) {
+  .mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
+  .mosaic__item { height: auto; aspect-ratio: 4 / 5; }
+  .mosaic__item--feature {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .mosaic__item--pos-1,
+  .mosaic__item--pos-2,
+  .mosaic__item--pos-3,
+  .mosaic__item--pos-4 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .mosaic__item--pos-5 {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Mobile: 2 colunas com destaque em largura total. */
+@media (max-width: 640px) {
+  .mosaic { gap: 12px; }
+  /* A proporção vem de width/height de cada foto (definida no JS). */
+  .mosaic__item,
+  .mosaic__item--feature,
+  .mosaic__item--pos-5 { aspect-ratio: var(--photo-ratio, 4 / 5); }
+}
+
+@media (max-width: 420px) {
+  .mosaic { grid-template-columns: 1fr; }
+  .mosaic__item,
+  .mosaic__item--feature,
+  .mosaic__item--pos-5 { grid-column: 1 / -1; }
+}
+
+/* Lightbox sem dependências */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(0,8,20,.94);
+  opacity: 0;
+  transition: opacity .25s var(--ease);
+}
+.lightbox[hidden] { display: none; }
+.lightbox.is-open { opacity: 1; }
+
+.lightbox__dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .7rem;
+  width: 100%;
+  max-width: 1120px;
+}
+.lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .9rem;
+  min-width: 0;
+  max-width: 100%;
+}
+.lightbox__image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 12rem);
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--navy-ink);
+  box-shadow: 0 24px 80px rgba(0,0,0,.45);
+}
+.lightbox__counter {
+  font-size: .75rem;
+  letter-spacing: .16em;
+  color: var(--on-navy-mid);
+}
+
+.lightbox__btn {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 50%;
+  background: rgba(0,12,32,.55);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color .25s var(--ease), border-color .25s var(--ease);
+}
+.lightbox__btn:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.55); }
+.lightbox__btn:focus-visible { outline-color: #fff; }
+.lightbox__btn svg { width: 22px; height: 22px; }
+.lightbox__close {
+  position: fixed;
+  top: clamp(.75rem, 2vw, 1.5rem);
+  right: clamp(.75rem, 2vw, 1.5rem);
+  z-index: 2;
+}
+.lightbox__nav {
+  position: fixed;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+.lightbox__nav--prev { left: clamp(.5rem, 2vw, 1.5rem); }
+.lightbox__nav--next { right: clamp(.5rem, 2vw, 1.5rem); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mosaic__photo,
+  .lightbox { transition: none; }
+  .mosaic__item:hover .mosaic__photo,
+  .mosaic__item:focus-visible .mosaic__photo { transform: none; }
+}
+
+/* ============================================================
+   13. COBERTURA
+   ============================================================ */
+.coverage {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--navy-ink);
+}
+.coverage__bg { position: absolute; inset: 0; z-index: -2; }
+.coverage__bg img { width: 100%; height: 100%; object-fit: cover; opacity: .3; }
+.coverage::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(100deg, var(--navy-ink) 22%, rgba(0,22,61,.72) 68%, rgba(0,22,61,.55) 100%);
+}
+
+/* Desloca a foto para a direita: o vão criado à esquerda fica sob o
+   trecho opaco do gradiente, e os rostos saem de baixo dos textos. */
+@media (min-width: 901px) {
+  .coverage__bg { transform: translateX(13%); }
+}
+
+.coverage__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,.18);
+}
+.coverage__cell { padding: clamp(1.5rem, 2.5vw, 2.25rem) 1.25rem 0 0; }
+.coverage__cell + .coverage__cell { border-left: 1px solid rgba(255,255,255,.14); padding-left: 1.25rem; }
+.coverage__uf {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1;
+  color: #fff;
+}
+.coverage__name {
+  margin-top: .55rem;
+  font-size: .82rem;
+  color: var(--on-navy-mid);
+  line-height: 1.4;
+}
+.coverage__tag {
+  display: inline-block;
+  margin-top: .9rem;
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--on-navy-soft);
+  padding: .3rem .55rem;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: var(--r-1);
+}
+
+/* ============================================================
+   14. CONTATO
+   ============================================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.contact-block + .contact-block { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--hairline); }
+.contact-block__title {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: .9rem;
+}
+
+.contact-list { display: flex; flex-direction: column; }
+.contact-list a,
+.contact-list address {
+  display: flex;
+  align-items: flex-start;
+  gap: .8rem;
+  padding: .7rem 0;
+  font-size: .95rem;
+  font-style: normal;
+  color: var(--graphite);
+  transition: color .25s var(--ease);
+}
+.contact-list a:hover { color: var(--navy); }
+.contact-list svg { width: 17px; height: 17px; flex: none; margin-top: .2rem; color: var(--navy); }
+
+/* Formulário */
+.form { display: grid; gap: 1.15rem; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; }
+.field { display: grid; gap: .4rem; }
+.field label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: .8rem .9rem;
+  font-size: .95rem;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-1);
+  color: var(--graphite);
+  transition: border-color .2s var(--ease), background-color .2s var(--ease);
+}
+.field textarea { resize: vertical; min-height: 118px; }
+.field input::placeholder, .field textarea::placeholder { color: #6B7280; }
+.field input:hover, .field textarea:hover, .field select:hover { border-color: #C3CAD4; }
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+  border-color: var(--navy);
+}
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 2.4rem;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23525C6B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round%27%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .8rem center;
+  background-size: 1.05rem;
+}
+.field select option { color: var(--graphite); background: #fff; }
+.field[data-invalid="true"] input,
+.field[data-invalid="true"] textarea, .field[data-invalid="true"] select { border-color: #B3261E; }
+.field__error {
+  font-size: .78rem;
+  color: #B3261E;
+  min-height: 0;
+}
+.field[data-invalid="true"] .field__error { min-height: 1.1em; }
+
+.form__note { font-size: .8rem; color: var(--steel); }
+.form__status {
+  font-size: .875rem;
+  padding: .85rem 1rem;
+  border-radius: var(--r-1);
+  border: 1px solid var(--hairline);
+  background: var(--canvas);
+}
+.form__status[data-state="ok"] { border-color: #177245; background: #F1F8F3; color: #14532D; }
+.form__status[data-state="erro"] { border-color: #E4B4B0; background: #FDF3F2; color: #8C1D18; }
+.form__status:empty { display: none; }
+.form__fallback {
+  display: inline-block;
+  margin-top: .55rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.form__fallback[hidden] { display: none; }
+
+/* ============================================================
+   15. FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--navy-ink);
+  color: var(--on-navy-soft);
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  font-size: .9rem;
+}
+.site-footer .brand img { height: 40px; }
+.footer__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+.footer__title {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--on-navy-mid);
+  margin-bottom: 1rem;
+}
+.footer__links li + li { margin-top: .55rem; }
+.footer__links a {
+  font-size: .88rem;
+  color: var(--on-navy-soft);
+  transition: color .25s var(--ease);
+}
+.footer__links a:hover { color: #fff; }
+.footer__tagline {
+  margin-top: 1.1rem;
+  font-size: .88rem;
+  line-height: 1.7;
+  max-width: 38ch;
+}
+.footer__states {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem .9rem;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--on-navy-mid);
+}
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-block: 1.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  justify-content: space-between;
+  font-size: .78rem;
+  color: var(--on-navy-soft);
+}
+
+/* Botão flutuante de WhatsApp removido a pedido do cliente */
+
+/* ============================================================
+   16. REVEAL — só oculta quando o movimento é permitido E o JS
+    está ativo (html.js). Sem JS ou com prefers-reduced-motion,
+    todo o conteúdo permanece visível.
+    ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s var(--ease), transform .6s var(--ease);
+    transition-delay: var(--d, 0ms);
+  }
+  html.js .reveal.is-in { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   17. RESPONSIVO
+   ============================================================ */
+@media (max-width: 1080px) {
+  .footer__top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (max-width: 900px) {
+  :root { --header-h: 68px; }
+
+  .nav__toggle { display: flex; }
+
+  /* Painel mobile */
+  .site-header .container { position: relative; }
+  .nav__panel {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    background: var(--surface);
+    border-top: 1px solid var(--hairline);
+    padding: 1.5rem var(--gutter) 2.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .28s var(--ease), transform .28s var(--ease), visibility .28s;
+  }
+  .nav__panel[data-open="true"] { transform: none; opacity: 1; visibility: visible; }
+
+  .nav__list { flex-direction: column; align-items: stretch; gap: 0; }
+  .nav__list a {
+    font-size: 1.05rem;
+    padding-block: .95rem;
+    border-bottom: 1px solid var(--hairline);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .nav__list a::after { display: none; }
+  .nav__panel .btn { justify-content: center; }
+
+  .hero__grid { grid-template-columns: 1fr; }
+
+  .coverage {
+    background: linear-gradient(180deg, var(--navy-ink) 0%, #000814 100%);
+  }
+  .coverage__bg {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+  }
+  .coverage__bg img {
+    display: block;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: 70% center;
+    opacity: .9;
+  }
+  .coverage::after { display: none; }
+
+  .coverage-rail ul { grid-template-columns: repeat(2, 1fr); }
+  .coverage-rail li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .coverage-rail li:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.14); }
+
+  .editorial { grid-template-columns: 1fr; }
+  .figure { order: -1; }
+
+  .section-head--split { grid-template-columns: 1fr; align-items: start; }
+
+  .number-row { grid-template-columns: 1fr; }
+  .number-row__item { padding: 1.35rem 0; border-left: 0; }
+  .number-row__item + .number-row__item { border-top: 1px solid var(--hairline); padding-left: 0; }
+
+  .feature-pair { grid-template-columns: 1fr; }
+  .feature { padding-right: 0; }
+  .feature + .feature { border-left: 0; border-top: 1px solid var(--hairline); padding-left: 0; padding-top: 1.75rem; }
+
+  .coverage__grid { grid-template-columns: repeat(2, 1fr); }
+  .coverage__cell:nth-child(3) { border-left: 0; padding-left: 0; }
+  .coverage__cell:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.14); }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .form__row { grid-template-columns: 1fr; }
+
+  .footer__top { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .client-list { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .footer__bottom { flex-direction: column; }
+}
+
+@media (min-width: 901px) {
+  .nav__panel { display: contents; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .link-arrow, .client-list__logo, .client-list__name,
+  .nav__list a, .nav__list a::after, .nav__toggle span,
+  .marquee__item { transition: none; }
+  .btn:hover, .btn--on-dark:hover,
+  .client-list__item:hover .client-list__logo { transform: none; }
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="header">
+  <div class="container">
+    <a href="#topo" class="brand" aria-label="FA Martins Representações — início">
+      <img src="assets/brand/logo-transparent-184.png" alt="FA Martins Representações" width="184" height="112" fetchpriority="high">
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <button class="nav__toggle" id="navToggle" type="button"
+              aria-expanded="false" aria-controls="navPanel" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__panel" id="navPanel" data-open="false">
+        <ul class="nav__list" id="navList">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="#distribuidores">Distribuidores</a></li>
+          <li><a href="#atuacao">Onde atuamos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn btn--primary" data-wa="default"
+           href="https://wa.me/5585999214116?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20representa%C3%A7%C3%A3o%20comercial."
+           target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Falar com um representante
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo" tabindex="-1">
+  <span id="topo"></span>
+
+  <!-- ==========================================================
+       HERO
+       ========================================================== -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--light">Assessoria e representação comercial · Autopeças</p>
+          <h1 class="display hero__title" id="heroTitle">
+            Representação comercial de autopeças em <em>quatro estados</em> do Nordeste
+          </h1>
+          <p class="hero__lead">
+            Conectamos fabricantes de autopeças a distribuidores e atacados no Ceará, Piauí,
+            Maranhão e Rio Grande do Norte — com carteira ativa, negociação transparente
+            e presença de campo.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--on-dark" data-wa="hero"
+               href="https://wa.me/5585999214116?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20a%20FA%20Martins%20Representa%C3%A7%C3%B5es."
+               target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              Falar com um representante
+            </a>
+            <a class="link-arrow" href="#marcas">
+              Ver as marcas que representamos
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trilho de cobertura -->
+      <div class="coverage-rail" role="group" aria-label="Estados de atuação">
+        <ul>
+          <li><span class="uf">CE</span><span class="uf-label">Ceará — sede</span></li>
+          <li><span class="uf">PI</span><span class="uf-label">Piauí</span></li>
+          <li><span class="uf">MA</span><span class="uf-label">Maranhão</span></li>
+          <li><span class="uf">RN</span><span class="uf-label">Rio Grande do Norte</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SOBRE — 01
+       ========================================================== -->
+  <section class="section" id="sobre" aria-labelledby="sobreTitle">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="sec-index">SOBRE</p>
+          <p class="eyebrow">Quem somos</p>
+          <h2 class="h2" id="sobreTitle">Um escritório de representação comercial construído em relação de longo prazo</h2>
+        </div>
+        <p class="lead">
+          Não somos um intermediário de pedidos. Assumimos a carteira do fabricante no Nordeste
+          e respondemos por ela: visita ao cliente, negociação, giro de estoque e retorno à fábrica.
+        </p>
+      </div>
+
+      <div class="editorial">
+        <div class="editorial__body">
+          <p>
+            A <strong>FA Martins Representações</strong> é um escritório de assessoria e representação
+            comercial especializado no mercado atacadista de autopeças. Sediada em Fortaleza&nbsp;–&nbsp;CE,
+            atuamos como representante comercial de fabricantes de autopeças de qualidade junto a
+            distribuidores, atacados e redes de peças.
+          </p>
+          <p>
+            Nosso trabalho é de presença: conhecemos o mercado em que as nossas marcas atuam —
+            quem compra, com que frequência, em que linha e com qual giro. É essa proximidade que
+            permite negociar condições que uma tabela de preço sozinha não entrega.
+          </p>
+          <p>
+            Atendemos quatro estados — <strong>Ceará, Piauí, Maranhão e Rio Grande do Norte</strong> —
+            e cada um tem operação própria, com cobertura de território e regularidade de visita.
+          </p>
+        </div>
+
+        <figure class="figure figure--tall">
+          <div class="figure__frame">
+            <img src="assets/fotos/detalhe-01.webp" width="694" height="1152" loading="lazy" decoding="async"
+                 alt="Detalhe de componente automotivo.">
+          </div>
+          <figcaption>Componente automotivo · catálogo de linha</figcaption>
+        </figure>
+      </div>
+
+      <!-- Linha de números — sem cards -->
+      <div class="number-row">
+        <div class="number-row__item reveal">
+          <p class="number-row__value">28<sup>+</sup></p>
+          <p class="number-row__label">Anos de mercado</p>
+          <p class="number-row__note">Representação comercial em autopeças há mais de 28 anos.</p>
+        </div>
+        <div class="number-row__item reveal" style="--d:80ms">
+          <p class="number-row__value">4</p>
+          <p class="number-row__label">Estados de atuação</p>
+          <p class="number-row__note">Ceará, Piauí, Maranhão e Rio Grande do Norte.</p>
+        </div>
+        <div class="number-row__item reveal" style="--d:160ms">
+          <p class="number-row__value">15<sup>+</sup></p>
+          <p class="number-row__label">Marcas representadas</p>
+          <p class="number-row__note">Fabricantes selecionados por qualidade e regularidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       MARCAS REPRESENTADAS — 02
+       ========================================================== -->
+  <section class="section section--canvas" id="marcas" aria-labelledby="marcasTitle">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="sec-index">MARCAS</p>
+          <p class="eyebrow">Marcas representadas</p>
+          <h2 class="h2" id="marcasTitle">As marcas que representamos</h2>
+        </div>
+        <p class="lead">
+          Fabricantes selecionados por qualidade de linha, regularidade de fornecimento e
+          compatibilidade com a operação do atacado nordestino.
+        </p>
+      </div>
+
+      <!-- Marquee: duas linhas, direções opostas -->
+      <div class="marquee-block">
+        <div class="marquee" data-marquee data-dir="ltr" style="--dur:72s" role="group" tabindex="0" aria-label="Marcas representadas — rolagem contínua. Foque para pausar.">
+          <div class="marquee__track" data-marquee-track></div>
+        </div>
+        <div class="marquee" data-marquee data-dir="rtl" style="--dur:88s" aria-hidden="true">
+          <div class="marquee__track" data-marquee-track></div>
+        </div>
+      </div>
+
+      <!-- Destaques em texto (sem cards) -->
+      <div class="feature-pair">
+        <article class="feature">
+          <p class="feature__kicker">Linha pesada e leve</p>
+          <img class="feature__logo" src="assets/logos/clientes-opt/rikko-parts.webp"
+               alt="" width="240" height="240" loading="lazy" decoding="async">
+          <h3 class="feature__name">RIKKO Parts</h3>
+          <p class="feature__desc">
+            Especialista em sistemas de embreagem e frenagem: cilindros de embreagem, cilindros
+            de freios, sensores de ABS, bombas de vácuo e correntes de tração. Peças com rigoroso
+            controle de qualidade para linhas leve e pesada.
+          </p>
+        </article>
+        <article class="feature">
+          <p class="feature__kicker">Parceria desde 2001</p>
+          <img class="feature__logo" src="assets/logos/clientes-opt/hiper-freios.webp"
+               alt="" width="264" height="240" loading="lazy" decoding="async">
+          <h3 class="feature__name">Hiper Freios</h3>
+          <p class="feature__desc">
+            Discos, tambores e cubos para a linha leve com qualidade reconhecida. Parceria
+            iniciada em São Paulo e consolidada no mercado nordestino — mais de duas décadas
+            de confiança mútua.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       DISTRIBUIDORES — 03
+       ========================================================== -->
+  <section class="section" id="distribuidores" aria-labelledby="distTitle">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="sec-index">CLIENTES</p>
+          <p class="eyebrow">Distribuidores e clientes</p>
+          <h2 class="h2" id="distTitle">As empresas que confiam na nossa representação</h2>
+        </div>
+        <p class="lead">
+          Diferente das marcas que representamos, estas são as empresas que <strong>compram</strong>
+          através da FA Martins: distribuidores, atacados e redes de peças com operação nos
+          quatro estados em que atuamos.
+        </p>
+      </div>
+
+      <ul class="client-list" id="clientList"></ul>
+
+      <p class="form__note" style="margin-top:2rem;">
+        Relação de clientes ativos mantida pela equipe comercial. A grafia pode variar entre
+        razão social e nome fantasia.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       PRESENÇA — 04
+       ========================================================== -->
+  <section class="section section--canvas" id="presenca" aria-labelledby="presencaTitle">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="sec-index">RELACIONAMENTO</p>
+          <p class="eyebrow">Presença de campo</p>
+          <h2 class="h2" id="presencaTitle">Presença que constrói parcerias</h2>
+        </div>
+        <p class="lead">
+          Visitas e relacionamento de perto com quem move o setor automotivo.
+        </p>
+      </div>
+
+      <div class="mosaic" id="mosaic" role="group" aria-label="Galeria de visitas comerciais"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       COBERTURA — 05
+       ========================================================== -->
+  <section class="section coverage" id="atuacao" aria-labelledby="atuacaoTitle">
+    <div class="coverage__bg" aria-hidden="true">
+      <img src="assets/fotos/capa.webp" width="1690" height="723" loading="lazy" decoding="async" alt="">
+    </div>
+    <div class="container">
+      <div class="section-head">
+        <p class="sec-index" style="color:var(--on-navy-mid);">COBERTURA</p>
+        <p class="eyebrow eyebrow--light">Onde atuamos</p>
+        <h2 class="h2" id="atuacaoTitle">Quatro estados, operação própria</h2>
+      </div>
+
+      <div class="coverage__grid">
+        <div class="coverage__cell">
+          <p class="coverage__uf">CE</p>
+          <p class="coverage__name">Ceará</p>
+          <p class="coverage__tag">Sede</p>
+        </div>
+        <div class="coverage__cell">
+          <p class="coverage__uf">PI</p>
+          <p class="coverage__name">Piauí</p>
+        </div>
+        <div class="coverage__cell">
+          <p class="coverage__uf">MA</p>
+          <p class="coverage__name">Maranhão</p>
+        </div>
+        <div class="coverage__cell">
+          <p class="coverage__uf">RN</p>
+          <p class="coverage__name">Rio Grande do Norte</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       CONTATO
+       ========================================================== -->
+  <section class="section" id="contato" aria-labelledby="contatoTitle">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2 class="h2" id="contatoTitle">Vamos conversar sobre representação</h2>
+        </div>
+        <p class="lead">
+          Se você é <strong>fabricante</strong> e busca representação no Nordeste, ou
+          <strong>distribuidor</strong> e quer comprar por meio de um representante de confiança,
+          fale com a gente.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-block">
+            <p class="contact-block__title">Atendimento</p>
+            <div class="contact-list">
+              <a href="tel:+5585999214116">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .62 2.63 2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+55 (85) 99921-4116</span>
+              </a>
+              <a data-wa="contato" href="https://wa.me/5585999214116" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span>WhatsApp — falar com um representante</span>
+              </a>
+              <a href="mailto:famartins@famartins.com.br">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 4-10 8L2 4"/></svg>
+                <span>famartins@famartins.com.br</span>
+              </a>
+              <a href="https://instagram.com/famartinsrepresentacoes" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <span>@famartinsrepresentacoes</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-block">
+            <p class="contact-block__title">Escritório</p>
+            <address class="contact-list">
+              <p style="display:flex; gap:.8rem; padding:.7rem 0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none;margin-top:.2rem;color:var(--navy);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>
+                  FA Martins Representações<br>
+                  Fortaleza&nbsp;–&nbsp;CE, Brasil<br>
+                </span>
+              </p>
+            </address>
+          </div>
+
+          <div class="contact-block">
+            <p class="contact-block__title">Atuação</p>
+            <div class="contact-list">
+              <p style="display:flex; gap:.8rem; padding:.7rem 0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:17px;height:17px;flex:none;margin-top:.2rem;color:var(--navy);"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"/></svg>
+                <span>Ceará · Piauí · Maranhão · Rio Grande do Norte</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <form class="form" id="contatoForm" novalidate>
+          <div class="form__row">
+            <div class="field" data-field>
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo"
+                     autocomplete="name" maxlength="80" required aria-describedby="erro-nome">
+              <p class="field__error" id="erro-nome" aria-live="polite" aria-atomic="true"></p>
+            </div>
+            <div class="field" data-field>
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa"
+                     autocomplete="organization" maxlength="100" aria-describedby="erro-empresa">
+              <p class="field__error" id="erro-empresa" aria-live="polite" aria-atomic="true"></p>
+            </div>
+          </div>
+
+          <div class="field" data-field>
+            <label for="perfil">Você é</label>
+            <select id="perfil" name="perfil">
+              <option value="fabricante">Fabricante — busco representação</option>
+              <option value="distribuidor">Distribuidor — quero comprar</option>
+              <option value="outro">Outro assunto</option>
+            </select>
+          </div>
+
+          <div class="field" data-field>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Conte brevemente o que você precisa."
+                      maxlength="1200" required aria-describedby="erro-mensagem"></textarea>
+            <p class="field__error" id="erro-mensagem" aria-live="polite" aria-atomic="true"></p>
+          </div>
+
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          <a class="form__fallback" id="formWaFallback" href="#" target="_blank" rel="noopener noreferrer" hidden>Abrir WhatsApp manualmente</a>
+
+          <div>
+            <button type="submit" class="btn btn--primary">
+              Enviar mensagem
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+
+          <p class="form__note">
+            O envio abre o WhatsApp com a sua mensagem já escrita. Nenhum dado é armazenado neste site.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <a href="#topo" class="brand" aria-label="FA Martins Representações — voltar ao topo">
+          <img src="assets/brand/logo-transparent-184.png" alt="FA Martins Representações" width="184" height="112" loading="lazy" decoding="async">
+        </a>
+        <p class="footer__tagline">
+          Assessoria e representação comercial de autopeças no mercado atacadista do Nordeste.
+        </p>
+        <p class="footer__states">
+          <span>CE</span><span>PI</span><span>MA</span><span>RN</span>
+        </p>
+      </div>
+
+      <div>
+        <p class="footer__title">Navegação</p>
+        <ul class="footer__links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#marcas">Marcas representadas</a></li>
+          <li><a href="#distribuidores">Distribuidores</a></li>
+          <li><a href="#atuacao">Onde atuamos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer__title">Contato</p>
+        <ul class="footer__links">
+          <li><a href="tel:+5585999214116">+55 (85) 99921-4116</a></li>
+          <li><a data-wa="footer" href="https://wa.me/5585999214116" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="mailto:famartins@famartins.com.br">famartins@famartins.com.br</a></li>
+          <li><a href="https://instagram.com/famartinsrepresentacoes" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="ano">2026</span> FA Martins Representações. Todos os direitos reservados.</p>
+      <p>Fortaleza&nbsp;–&nbsp;CE · Brasil</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     LIGHTBOX — GALERIA 04
+     ============================================================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true"
+     aria-label="Visualização ampliada da galeria" hidden>
+  <button class="lightbox__btn lightbox__close" id="lightboxClose" type="button" aria-label="Fechar galeria">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M18 6 6 18M6 6l12 12"/>
+    </svg>
+  </button>
+  <button class="lightbox__btn lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m15 18-6-6 6-6"/>
+    </svg>
+  </button>
+  <button class="lightbox__btn lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Próxima foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m9 18 6-6-6-6"/>
+    </svg>
+  </button>
+
+  <div class="lightbox__dialog">
+    <figure class="lightbox__figure">
+      <img class="lightbox__image" id="lightboxImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" width="1200" height="900" decoding="async">
+    </figure>
+    <p class="lightbox__counter" id="lightboxCounter" aria-live="polite"></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ========================================================
+     DADOS
+     Formato: { name, logo, url, type }
+     `logo` e `url` são opcionais. Enquanto `logo` não for
+     preenchido, o item é renderizado como nome tipográfico.
+     ======================================================== */
+  var WHATSAPP = '5585999214116';
+
+  var LOGO_BASE = 'assets/logos/clientes-opt/';
+
+  var REPRESENTADAS = [
+    { name: 'Hiper Freios',          logo: LOGO_BASE + 'hiper-freios.webp',          type: 'partner' },
+    { name: 'RIKKO Parts',           logo: LOGO_BASE + 'rikko-parts.webp',           type: 'partner' },
+    { name: 'Deiton Lubrificantes',  logo: LOGO_BASE + 'deiton-lubrificantes.webp',  type: 'partner' },
+    { name: 'Nitro Automotive Line', logo: LOGO_BASE + 'nitro-automotive-line.webp',  type: 'partner' },
+    { name: 'NWO Automotive',        logo: LOGO_BASE + 'nwo-automotive.webp',        type: 'partner' },
+    { name: 'Driveway',              logo: LOGO_BASE + 'driveway.webp',              type: 'partner' },
+    { name: 'AutAFAstar Autopeças',  logo: LOGO_BASE + 'autofastar.webp',            type: 'partner' },
+    { name: 'Shockbras',             logo: LOGO_BASE + 'shockbras.webp',             type: 'partner' },
+    { name: 'Lucheti Lubrificantes', logo: LOGO_BASE + 'lucheti-lubrificantes.webp',  type: 'partner' }
+  ];
+
+  var DISTRIBUIDORES = [
+    { name: 'Grupo Padre Cícero',     logo: LOGO_BASE + 'grupo-padre-cicero.webp',     type: 'client' },
+    { name: 'Grupo Bezerra Oliveira', logo: LOGO_BASE + 'grupo-bezerra-oliveira.webp',  type: 'client' },
+    { name: 'MGR Distribuidora',      logo: LOGO_BASE + 'mgr-distribuidora.webp',      type: 'client' },
+    { name: 'Autofort Nordeste',      logo: LOGO_BASE + 'autofort-nordeste.webp',      type: 'client' },
+    { name: 'Nosso Estoque',          logo: LOGO_BASE + 'nosso-estoque.webp',          type: 'client' },
+    { name: 'Casa das Molas',         logo: LOGO_BASE + 'casa-das-molas.webp',         type: 'client' },
+    { name: 'Eletroparts',            logo: LOGO_BASE + 'eletroparts.webp',            type: 'client' },
+    { name: 'SOS Atacado',            logo: LOGO_BASE + 'sos-atacado.webp',            type: 'client' },
+    { name: 'Minuano Atacado',        logo: LOGO_BASE + 'minuano-atacado.webp',        type: 'client' },
+    { name: 'Wandré Distribuidora',   logo: LOGO_BASE + 'wandre-distribuidora.webp',   type: 'client' },
+    { name: 'Universokar',            logo: LOGO_BASE + 'universokar.webp',            type: 'client' },
+    { name: 'Volksbus',               logo: LOGO_BASE + 'volksbus.webp',               type: 'client' },
+    { name: 'Bruno Peças',            logo: LOGO_BASE + 'bruno-pecas.webp',            type: 'client' },
+    { name: 'Roxo Peças Automotivas', logo: LOGO_BASE + 'pecas-automotivas.webp', type: 'client' }
+  ];
+
+  /* ========================================================
+     GALERIA — SEÇÃO 04
+     A ordem deste array define a ordem do mosaico e do lightbox.
+     O item com destaque:true vira a foto grande (2x2); as demais
+     ocupam as classes pos-1 a pos-5 na ordem em que aparecem.
+     `width` e `height` definem a proporção natural usada no mobile.
+     `posicao` é o object-position das camadas nítida e desfocada.
+     ======================================================== */
+  var FOTOS = [
+    {
+      src: 'assets/fotos/presenca-01-full.webp',
+      width: 644, height: 849,
+      alt: 'Aperto de mãos entre o representante da FA Martins e um parceiro comercial.',
+      posicao: '50% 42%',
+      destaque: true
+    },
+    {
+      src: 'assets/fotos/presenca-02-full.webp',
+      width: 643, height: 852,
+      alt: 'Representante da FA Martins durante visita a um distribuidor de autopeças.',
+      posicao: '50% 38%'
+    },
+    {
+      src: 'assets/fotos/presenca-03-full.webp',
+      width: 691, height: 850,
+      alt: 'Conversa com cliente do atacado durante visita comercial.',
+      posicao: '50% 40%'
+    },
+    {
+      src: 'assets/fotos/presenca-04-full.webp',
+      width: 682, height: 850,
+      alt: 'Registro de encontro com distribuidor parceiro no balcão da loja.',
+      posicao: '50% 36%'
+    },
+    {
+      src: 'assets/fotos/presenca-05-full.webp',
+      width: 683, height: 845,
+      alt: 'Visita a distribuidor de autopeças em outra cidade.',
+      posicao: '50% 40%'
+    },
+    {
+      src: 'assets/fotos/presenca-06-full.webp',
+      width: 686, height: 806,
+      alt: 'Equipe FA Martins reunida com parceiros durante visita comercial.',
+      posicao: '50% 42%'
+    }
+  ];
+
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var mqlDesktop = window.matchMedia('(min-width: 901px)');
+
+  function onMediaChange(mql, handler) {
+    if (typeof mql.addEventListener === 'function') {
+      mql.addEventListener('change', handler);
+    } else if (typeof mql.addListener === 'function') {
+      mql.addListener(handler);
+    }
+  }
+
+  /* ========================================================
+     MARQUEE
+     O grupo é duplicado via JS para que o translate de -50%
+     seja exatamente um ciclo completo: sem salto visível.
+     ======================================================== */
+  function buildItem(item) {
+    var li = document.createElement('li');
+    li.className = 'marquee__item';
+    if (item.logo) {
+      var img = document.createElement('img');
+      img.className = 'marquee__logo';
+      img.src = item.logo;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      li.appendChild(img);
+    }
+    /* O nome sempre acompanha a logo: com `alt=""` a imagem nao e
+       announced, e o texto visivel preserva o nome acessivel e tambem
+       o fallback caso o arquivo de logo nao carregue. */
+    var span = document.createElement('span');
+    span.className = 'marquee__name';
+    span.textContent = item.name;
+    li.appendChild(span);
+    return li;
+  }
+
+  function buildGroup(items) {
+    var ul = document.createElement('ul');
+    ul.className = 'marquee__group';
+    items.forEach(function (it) { ul.appendChild(buildItem(it)); });
+    return ul;
+  }
+
+  document.querySelectorAll('[data-marquee]').forEach(function (mq) {
+    var track = mq.querySelector('[data-marquee-track]');
+    if (!track) return;
+    var first = buildGroup(REPRESENTADAS);
+    var second = buildGroup(REPRESENTADAS);
+    second.setAttribute('aria-hidden', 'true');
+    track.appendChild(first);
+    track.appendChild(second);
+  });
+
+  /* Lista de distribuidores: tile com logo acima do nome */
+  var clientList = document.getElementById('clientList');
+  if (clientList) {
+    DISTRIBUIDORES.forEach(function (c) {
+      var li = document.createElement('li');
+      li.className = 'client-list__item';
+      if (c.logo) {
+        var img = document.createElement('img');
+        img.className = 'client-list__logo';
+        img.src = c.logo;
+        img.alt = '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        li.appendChild(img);
+      }
+      var nm = document.createElement('span');
+      nm.className = 'client-list__name';
+      nm.textContent = c.name;
+      li.appendChild(nm);
+      clientList.appendChild(li);
+    });
+  }
+
+  /* ========================================================
+     GALERIA 04 — render do mosaico + lightbox acessível
+     ======================================================== */
+  var mosaic = document.getElementById('mosaic');
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImage = document.getElementById('lightboxImage');
+  var lightboxCounter = document.getElementById('lightboxCounter');
+  var lightboxClose = document.getElementById('lightboxClose');
+  var lightboxPrev = document.getElementById('lightboxPrev');
+  var lightboxNext = document.getElementById('lightboxNext');
+  var lightboxDialog = lightbox ? lightbox.querySelector('.lightbox__dialog') : null;
+  var galeria = [];
+  var fotoAtual = 0;
+  var ultimoFoco = null;
+  var overflowAnterior = '';
+
+  function setFundoLightbox(inert) {
+    [
+      document.querySelector('.site-header'),
+      document.getElementById('conteudo'),
+      document.querySelector('.site-footer')
+    ].forEach(function (el) {
+      if (!el) return;
+      if (inert) el.setAttribute('inert', '');
+      else el.removeAttribute('inert');
+    });
+  }
+
+  function renderLightbox(index) {
+    var foto = galeria[index];
+    if (!foto) return;
+
+    fotoAtual = index;
+    lightboxImage.src = foto.src;
+    lightboxImage.alt = foto.alt;
+    lightboxImage.width = foto.width;
+    lightboxImage.height = foto.height;
+
+    lightboxCounter.textContent = (index + 1) + ' / ' + galeria.length;
+  }
+
+  function abrirLightbox(index) {
+    if (!lightbox || !galeria.length) return;
+
+    ultimoFoco = document.activeElement;
+    overflowAnterior = document.body.style.overflow;
+    renderLightbox(index);
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    setFundoLightbox(true);
+    document.addEventListener('keydown', onLightboxKey);
+
+    requestAnimationFrame(function () {
+      if (!lightbox.hidden) lightbox.classList.add('is-open');
+    });
+    lightboxClose.focus();
+  }
+
+  function fecharLightbox() {
+    if (!lightbox || lightbox.hidden) return;
+
+    lightbox.classList.remove('is-open');
+    lightbox.hidden = true;
+    document.body.style.overflow = overflowAnterior;
+    setFundoLightbox(false);
+    document.removeEventListener('keydown', onLightboxKey);
+
+    if (ultimoFoco && typeof ultimoFoco.focus === 'function') ultimoFoco.focus();
+  }
+
+  function navegarLightbox(direcao) {
+    if (!lightbox || lightbox.hidden || !galeria.length) return;
+    renderLightbox((fotoAtual + direcao + galeria.length) % galeria.length);
+  }
+
+  function focaveisLightbox() {
+    return Array.prototype.slice.call(
+      lightbox.querySelectorAll('button:not([disabled])')
+    );
+  }
+
+  function onLightboxKey(e) {
+    if (!lightbox || lightbox.hidden) return;
+
+    if (e.key === 'Escape') { e.preventDefault(); fecharLightbox(); return; }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); navegarLightbox(-1); return; }
+    if (e.key === 'ArrowRight') { e.preventDefault(); navegarLightbox(1); return; }
+    if (e.key !== 'Tab') return;
+
+    /* Foco preso dentro do diálogo */
+    var focaveis = focaveisLightbox();
+    if (!focaveis.length) return;
+
+    var primeiro = focaveis[0];
+    var ultimo = focaveis[focaveis.length - 1];
+
+    if (e.shiftKey && document.activeElement === primeiro) {
+      e.preventDefault();
+      ultimo.focus();
+    } else if (!e.shiftKey && document.activeElement === ultimo) {
+      e.preventDefault();
+      primeiro.focus();
+    }
+  }
+
+  if (mosaic) {
+    var destaque = FOTOS.filter(function (f) { return f.destaque; })[0] || FOTOS[0];
+    galeria = [destaque].concat(FOTOS.filter(function (f) { return f !== destaque; }));
+
+    galeria.forEach(function (foto, index) {
+      var item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'mosaic__item reveal ' +
+        (index === 0 ? 'mosaic__item--feature' : 'mosaic__item--pos-' + index);
+      item.style.setProperty('--d', (index * 70) + 'ms');
+      item.style.setProperty('--photo-ratio', foto.width + ' / ' + foto.height);
+      item.setAttribute('aria-haspopup', 'dialog');
+
+      /* Camada decorativa: preenche as sobras com a própria foto desfocada. */
+      var fundo = document.createElement('img');
+      fundo.className = 'mosaic__bg';
+      fundo.src = foto.src;
+      fundo.alt = '';
+      fundo.setAttribute('aria-hidden', 'true');
+      fundo.loading = 'lazy';
+      fundo.decoding = 'async';
+      fundo.style.objectPosition = foto.posicao || '50% 40%';
+
+      /* Foto nítida: contain garante que nenhuma parte seja cortada. */
+      var img = document.createElement('img');
+      img.className = 'mosaic__photo';
+      img.src = foto.src;
+      img.alt = foto.alt;
+      img.width = foto.width;
+      img.height = foto.height;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.style.objectPosition = foto.posicao || '50% 40%';
+
+      item.appendChild(fundo);
+      item.appendChild(img);
+      item.addEventListener('click', function () { abrirLightbox(index); });
+      mosaic.appendChild(item);
+    });
+  }
+
+  if (lightbox) {
+    lightboxClose.addEventListener('click', fecharLightbox);
+    lightboxPrev.addEventListener('click', function () { navegarLightbox(-1); });
+    lightboxNext.addEventListener('click', function () { navegarLightbox(1); });
+
+    /* Clique fora da foto/diálogo fecha */
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox || e.target === lightboxDialog) fecharLightbox();
+    });
+  }
+
+  /* ========================================================
+     MENU MOBILE — aria, Escape, foco e trava de scroll
+     ======================================================== */
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('navPanel');
+  var header = document.getElementById('header');
+  var main = document.getElementById('conteudo');
+  var footer = document.querySelector('.site-footer');
+
+  function isOpen() { return toggle.getAttribute('aria-expanded') === 'true'; }
+
+  function setMenu(open) {
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    panel.setAttribute('data-open', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (main) {
+      if (open) main.setAttribute('inert', '');
+      else main.removeAttribute('inert');
+    }
+    if (footer) {
+      if (open) footer.setAttribute('inert', '');
+      else footer.removeAttribute('inert');
+    }
+  }
+
+  toggle.addEventListener('click', function () { setMenu(!isOpen()); });
+
+  var marca = header.querySelector('.brand');
+  if (marca) {
+    marca.addEventListener('click', function () {
+      if (isOpen()) setMenu(false);
+    });
+  }
+
+  panel.addEventListener('click', function (e) {
+    var link = e.target.closest('a');
+    if (!link) return;
+
+    setMenu(false);
+
+    var href = link.getAttribute('href') || '';
+    if (href.charAt(0) === '#') {
+      var destino = document.querySelector(href);
+      var titulo = destino ? destino.querySelector('h1, h2, h3') : null;
+      if (titulo) {
+        titulo.setAttribute('tabindex', '-1');
+        window.setTimeout(function () {
+          titulo.focus({ preventScroll: true });
+        }, 0);
+        return;
+      }
+    }
+
+    toggle.focus();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen()) { setMenu(false); toggle.focus(); }
+  });
+
+  onMediaChange(mqlDesktop, function () {
+    if (mqlDesktop.matches && isOpen()) setMenu(false);
+  });
+
+  /* ========================================================
+     REVELE
+     A classe .reveal só oculta quando o movimento é permitido
+     (ver media query no CSS). Sem JS ou com reduced-motion,
+     todo o conteúdo permanece visível.
+     ======================================================== */
+  var revealables = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window && !REDUCED.matches) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealables.forEach(function (el) { io.observe(el); });
+  } else {
+    revealables.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  onMediaChange(REDUCED, function () {
+    if (REDUCED.matches) revealables.forEach(function (el) { el.classList.add('is-in'); });
+  });
+
+  /* ========================================================
+     MARQUEE — pausa fora da viewport
+     ======================================================== */
+  var marquees = Array.prototype.slice.call(document.querySelectorAll('[data-marquee]:not([aria-hidden="true"])'));
+
+  if ('IntersectionObserver' in window && marquees.length) {
+    var mio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.setAttribute('data-inactive', String(!entry.isIntersecting));
+      });
+    }, { threshold: 0 });
+    marquees.forEach(function (m) { mio.observe(m); });
+  }
+
+  /* ========================================================
+     HEADER — marca de rolagem
+     ======================================================== */
+  var onScroll = function () {
+    header.classList.toggle('is-stuck', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ========================================================
+     LINK ATIVO NO NAV
+     ======================================================== */
+  var sections = Array.prototype.slice.call(
+    document.querySelectorAll('main section[id]')
+  );
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#navList a'));
+
+  if ('IntersectionObserver' in window) {
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.id;
+        navLinks.forEach(function (a) {
+          if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { sio.observe(s); });
+  }
+
+  /* ========================================================
+     ANO NO FOOTER
+     ======================================================== */
+  var ano = document.getElementById('ano');
+  if (ano) ano.textContent = String(new Date().getFullYear());
+
+  /* ========================================================
+     FORMULÁRIO — validação inline + envio via WhatsApp
+     ======================================================== */
+  var form = document.getElementById('contatoForm');
+  var status = document.getElementById('formStatus');
+  var fallback = document.getElementById('formWaFallback');
+
+  function setFieldError(input, message) {
+    var field = input.closest('[data-field]');
+    if (!field) return;
+    var err = field.querySelector('.field__error');
+    field.setAttribute('data-invalid', String(Boolean(message)));
+    input.setAttribute('aria-invalid', String(Boolean(message)));
+    if (err) err.textContent = message || '';
+  }
+
+  function validate(input) {
+    var v = input.value.trim();
+    if (input.hasAttribute('required') && !v) {
+      setFieldError(input, 'Preencha este campo.');
+      return false;
+    }
+    setFieldError(input, '');
+    return true;
+  }
+
+  if (form) {
+    form.querySelectorAll('input[required], textarea[required]').forEach(function (input) {
+      input.addEventListener('blur', function () { validate(input); });
+      input.addEventListener('input', function () {
+        if (input.closest('[data-field]').getAttribute('data-invalid') === 'true') validate(input);
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (fallback) fallback.hidden = true;
+      var campos = form.querySelectorAll('input[required], textarea[required]');
+      var ok = true;
+      var primeiro = null;
+
+      campos.forEach(function (input) {
+        if (!validate(input)) {
+          ok = false;
+          if (!primeiro) primeiro = input;
+        }
+      });
+
+      if (!ok) {
+        status.setAttribute('data-state', 'erro');
+        status.textContent = 'Revise os campos destacados antes de enviar.';
+        if (primeiro) primeiro.focus();
+        return;
+      }
+
+      var nome = form.nome.value.trim();
+      var empresa = form.empresa.value.trim();
+      var perfil = form.perfil.value;
+      var mensagem = form.mensagem.value.trim();
+      var rotulo = perfil === 'fabricante' ? 'Sou fabricante e busco representação no Nordeste.'
+                 : perfil === 'distribuidor' ? 'Sou distribuidor e quero comprar via representante.'
+                 : 'Tenho outro assunto.';
+
+      var texto = encodeURIComponent(
+        'Olá! Meu nome é ' + nome +
+        (empresa ? ', da empresa ' + empresa : '') + '.\n\n' +
+        rotulo + '\n\n' + mensagem
+      );
+      var url = 'https://wa.me/' + WHATSAPP + '?text=' + texto;
+
+      var link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      if (fallback) {
+        fallback.href = url;
+        fallback.hidden = false;
+      }
+
+      form.reset();
+      status.setAttribute('data-state', 'ok');
+      status.textContent = 'Tudo certo, ' + nome.split(' ')[0] + '. Abrindo o WhatsApp com sua mensagem…';
+    });
+  }
+})();
+</script>
+</body>
+</html>
