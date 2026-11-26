@@ -736,17 +736,21 @@ h1, h2, h3 {
   .catalog__item:nth-child(2n) { padding-right: 0; border-left: 1px solid var(--hairline); }
 }
 
-/* Celular: logo ao lado do nome, descrição em largura total */
+/* Celular: destaques e grade no mesmo padrão — logo ao lado do nome,
+   descrição em largura total */
 @media (max-width: 640px) {
   .feature-pair { grid-template-columns: 1fr; }
-  .feature { padding-right: 0; }
-  .feature + .feature { border-left: 0; border-top: 1px solid var(--hairline); padding-left: 0; padding-top: 1.75rem; }
+  .feature,
+  .feature + .feature { padding: clamp(1.5rem, 2.5vw, 2rem) 0; }
+  .feature + .feature { border-left: 0; border-top: 1px solid var(--hairline); }
 
+  .feature,
   .catalog__item {
     display: grid;
     grid-template-columns: 84px minmax(0, 1fr);
     column-gap: 1rem;
   }
+  .feature__logo,
   .catalog__logo {
     grid-column: 1;
     grid-row: 1 / span 2;
@@ -756,11 +760,23 @@ h1, h2, h3 {
     max-width: none;
     margin: 0;
   }
+  .feature__kicker,
   .catalog__kicker { grid-column: 2; align-self: end; margin-bottom: .3rem; }
-  .catalog__name { grid-column: 2; align-self: start; margin-bottom: 0; }
+  .feature__name,
+  .catalog__name {
+    grid-column: 2;
+    align-self: start;
+    margin-bottom: 0;
+    font-size: 1.02rem;
+    line-height: 1.25;
+    letter-spacing: -.012em;
+  }
+  .feature__desc,
+  .catalog__desc { margin-top: .9rem; font-size: .88rem; line-height: 1.65; }
+  .feature__desc,
   .catalog__desc,
+  .feature .line-tags,
   .catalog__item .line-tags { grid-column: 1 / -1; }
-  .catalog__desc { margin-top: .9rem; }
 }
 
 /* ============================================================
