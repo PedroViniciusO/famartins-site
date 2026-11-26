@@ -620,7 +620,9 @@ h1, h2, h3 {
 }
 
 /* ============================================================
-   10. DESTAQUES DE MARCA (editorial, sem cards genéricos)
+   10. CATÁLOGO DE MARCAS (editorial, sem cards genéricos)
+   Parceiros em destaque (par) seguidos da grade com as demais
+   marcas. Mesma linguagem de filetes do restante do site.
    ============================================================ */
 .feature-pair {
   display: grid;
@@ -631,11 +633,14 @@ h1, h2, h3 {
 }
 .feature-pair > * + * { border-left: 1px solid var(--hairline); }
 .feature {
-  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem) 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem) clamp(1.75rem, 3vw, 2.5rem) 0;
 }
 .feature + .feature { padding-left: clamp(1.5rem, 3vw, 2.5rem); }
 .feature__logo {
   display: block;
+  align-self: flex-start;
   height: clamp(60px, 7vw, 92px);
   width: auto;
   max-width: 260px;
@@ -643,7 +648,8 @@ h1, h2, h3 {
   object-position: left;
   margin-bottom: .85rem;
 }
-.feature__kicker {
+.feature__kicker,
+.catalog__kicker {
   font-size: .68rem;
   font-weight: 600;
   letter-spacing: .16em;
@@ -661,6 +667,101 @@ h1, h2, h3 {
 }
 .feature__desc { font-size: .95rem; line-height: 1.72; color: var(--steel); }
 .feature__desc strong { color: var(--graphite); font-weight: 600; }
+
+/* Demais marcas: 3 colunas no desktop, 2 no tablet, lista compacta no celular */
+.catalog {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.catalog__item {
+  display: flex;
+  flex-direction: column;
+  padding-block: clamp(1.5rem, 2.5vw, 2rem);
+  border-top: 1px solid var(--hairline);
+}
+.catalog__logo {
+  display: block;
+  align-self: flex-start;
+  height: clamp(56px, 5.4vw, 78px);
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  object-position: left;
+  margin-bottom: .75rem;
+}
+.catalog__name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.012em;
+  color: var(--navy);
+  margin-bottom: .5rem;
+}
+.catalog__desc { font-size: .88rem; line-height: 1.65; color: var(--steel); }
+
+/* Linhas atendidas: etiquetas alinhadas ao pé de cada bloco */
+.line-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
+}
+.line-tags li {
+  font-size: .64rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding: .4rem .55rem;
+  background: var(--surface);
+  border: 1px solid rgba(0, 51, 161, .22);
+  border-radius: var(--r-1);
+}
+
+@media (min-width: 1025px) {
+  .catalog { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .catalog__item { padding-inline: clamp(1.25rem, 2.2vw, 1.75rem); }
+  .catalog__item:nth-child(3n+1) { padding-left: 0; }
+  .catalog__item:nth-child(3n) { padding-right: 0; }
+  .catalog__item:not(:nth-child(3n+1)) { border-left: 1px solid var(--hairline); }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .catalog__item { padding-inline: 1.5rem; }
+  .catalog__item:nth-child(2n+1) { padding-left: 0; }
+  .catalog__item:nth-child(2n) { padding-right: 0; border-left: 1px solid var(--hairline); }
+}
+
+/* Celular: logo ao lado do nome, descrição em largura total */
+@media (max-width: 640px) {
+  .feature-pair { grid-template-columns: 1fr; }
+  .feature { padding-right: 0; }
+  .feature + .feature { border-left: 0; border-top: 1px solid var(--hairline); padding-left: 0; padding-top: 1.75rem; }
+
+  .catalog__item {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    column-gap: 1rem;
+  }
+  .catalog__logo {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: center;
+    width: 84px;
+    height: 58px;
+    max-width: none;
+    margin: 0;
+  }
+  .catalog__kicker { grid-column: 2; align-self: end; margin-bottom: .3rem; }
+  .catalog__name { grid-column: 2; align-self: start; margin-bottom: 0; }
+  .catalog__desc,
+  .catalog__item .line-tags { grid-column: 1 / -1; }
+  .catalog__desc { margin-top: .9rem; }
+}
 
 /* ============================================================
    11. LISTA DE DISTRIBUIDORES
@@ -1226,10 +1327,6 @@ h1, h2, h3 {
   .number-row__item { padding: 1.35rem 0; border-left: 0; }
   .number-row__item + .number-row__item { border-top: 1px solid var(--hairline); padding-left: 0; }
 
-  .feature-pair { grid-template-columns: 1fr; }
-  .feature { padding-right: 0; }
-  .feature + .feature { border-left: 0; border-top: 1px solid var(--hairline); padding-left: 0; padding-top: 1.75rem; }
-
   .coverage__grid { grid-template-columns: repeat(2, 1fr); }
   .coverage__cell:nth-child(3) { border-left: 0; padding-left: 0; }
   .coverage__cell:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.14); }
@@ -1429,194 +1526,215 @@ h1, h2, h3 {
       <div class="marquee-block">
         <div class="marquee" data-marquee data-dir="ltr" style="--dur:72s" role="group" tabindex="0" aria-label="Marcas representadas — rolagem contínua. Foque para pausar.">
           <div class="marquee__track" data-marquee-track>
-          <ul class="marquee__group">
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/hiper-freios.webp" alt="" width="264" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Hiper Freios</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/rikko-parts.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">RIKKO Parts</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Deiton Lubrificantes</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Nitro Automotive Line</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Driveway</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">AutAFAstar Autopeças</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Shockbras</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Lucheti Lubrificantes</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Lumer</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">MZK Rolamentos</span>
-            </li>
-          </ul>
-          <ul class="marquee__group" aria-hidden="true">
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/hiper-freios.webp" alt="" width="264" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Hiper Freios</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/rikko-parts.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">RIKKO Parts</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Deiton Lubrificantes</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Nitro Automotive Line</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Driveway</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">AutAFAstar Autopeças</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Shockbras</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Lucheti Lubrificantes</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Lumer</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">MZK Rolamentos</span>
-            </li>
-          </ul>
+            <ul class="marquee__group">
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/hiper-freios.webp" alt="" width="264" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Hiper Freios</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/rikko-parts.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">RIKKO Parts</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Deiton Lubrificantes</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Nitro Automotive Line</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/gmb-automotive.webp" alt="" width="262" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">GMB Automotive</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Driveway</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">AutAFAstar Autopeças</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Shockbras</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Lucheti Lubrificantes</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Lumer</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">MZK Rolamentos</span>
+              </li>
+            </ul>
+            <ul class="marquee__group" aria-hidden="true">
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/hiper-freios.webp" alt="" width="264" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Hiper Freios</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/rikko-parts.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">RIKKO Parts</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Deiton Lubrificantes</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Nitro Automotive Line</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/gmb-automotive.webp" alt="" width="262" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">GMB Automotive</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Driveway</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">AutAFAstar Autopeças</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Shockbras</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Lucheti Lubrificantes</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Lumer</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">MZK Rolamentos</span>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="marquee" data-marquee data-dir="rtl" style="--dur:88s" aria-hidden="true">
           <div class="marquee__track" data-marquee-track>
-          <ul class="marquee__group">
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/hiper-freios.webp" alt="" width="264" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Hiper Freios</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/rikko-parts.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">RIKKO Parts</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Deiton Lubrificantes</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Nitro Automotive Line</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Driveway</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">AutAFAstar Autopeças</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Shockbras</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Lucheti Lubrificantes</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Lumer</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">MZK Rolamentos</span>
-            </li>
-          </ul>
-          <ul class="marquee__group" aria-hidden="true">
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/hiper-freios.webp" alt="" width="264" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Hiper Freios</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/rikko-parts.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">RIKKO Parts</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Deiton Lubrificantes</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Nitro Automotive Line</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Driveway</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">AutAFAstar Autopeças</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Shockbras</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Lucheti Lubrificantes</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">Lumer</span>
-            </li>
-            <li class="marquee__item">
-              <img class="marquee__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
-              <span class="marquee__name">MZK Rolamentos</span>
-            </li>
-          </ul>
+            <ul class="marquee__group">
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/hiper-freios.webp" alt="" width="264" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Hiper Freios</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/rikko-parts.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">RIKKO Parts</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Deiton Lubrificantes</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Nitro Automotive Line</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/gmb-automotive.webp" alt="" width="262" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">GMB Automotive</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Driveway</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">AutAFAstar Autopeças</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Shockbras</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Lucheti Lubrificantes</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Lumer</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">MZK Rolamentos</span>
+              </li>
+            </ul>
+            <ul class="marquee__group" aria-hidden="true">
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/hiper-freios.webp" alt="" width="264" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Hiper Freios</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/rikko-parts.webp" alt="" width="240" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">RIKKO Parts</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Deiton Lubrificantes</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Nitro Automotive Line</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/gmb-automotive.webp" alt="" width="262" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">GMB Automotive</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Driveway</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">AutAFAstar Autopeças</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Shockbras</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Lucheti Lubrificantes</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">Lumer</span>
+              </li>
+              <li class="marquee__item">
+                <img class="marquee__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
+                <span class="marquee__name">MZK Rolamentos</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <!-- Destaques em texto (sem cards) -->
+      <!-- Catálogo: parceiros em destaque + demais marcas, com linhas atendidas.
+           Gerado a partir de uma única lista de marcas (carrossel e catálogo). -->
       <div class="feature-pair">
         <article class="feature">
-          <p class="feature__kicker">Linha pesada e leve</p>
+          <p class="feature__kicker">Embreagem e frenagem</p>
           <img class="feature__logo" src="assets/logos/clientes-opt/rikko-parts.webp"
                alt="" width="240" height="240" loading="lazy" decoding="async">
           <h3 class="feature__name">RIKKO Parts</h3>
           <p class="feature__desc">
-            Especialista em sistemas de embreagem e frenagem: cilindros de embreagem, cilindros
-            de freios, sensores de ABS, bombas de vácuo e correntes de tração. Peças com rigoroso
-            controle de qualidade para linhas leve e pesada.
+            Especialista em sistemas de embreagem e frenagem: cilindros de embreagem,
+            cilindros de freios, sensores de ABS, bombas de vácuo e correntes de tração.
+            Peças com rigoroso controle de qualidade para linhas leve e pesada.
           </p>
+          <ul class="line-tags" aria-label="Linhas atendidas">
+            <li>Leve</li>
+            <li>Pesada</li>
+          </ul>
         </article>
         <article class="feature">
           <p class="feature__kicker">Parceria desde 2001</p>
@@ -1624,12 +1742,130 @@ h1, h2, h3 {
                alt="" width="264" height="240" loading="lazy" decoding="async">
           <h3 class="feature__name">Hiper Freios</h3>
           <p class="feature__desc">
-            Discos, tambores, cubos de roda e cilindro mestre de freios para toda a linha leve,
-            e tambores para a linha pesada. Parceria iniciada em São Paulo e consolidada no
-            mercado nordestino — mais de duas décadas de confiança mútua.
+            Discos, tambores, cubos de roda e cilindro mestre de freios para toda a
+            linha leve, e tambores para a linha pesada. Parceria iniciada em São Paulo e
+            consolidada no mercado nordestino — mais de duas décadas de confiança mútua.
           </p>
+          <ul class="line-tags" aria-label="Linhas atendidas">
+            <li>Leve</li>
+            <li>Pesada</li>
+          </ul>
         </article>
       </div>
+
+      <ul class="catalog" role="list">
+        <li class="catalog__item">
+          <p class="catalog__kicker">Arrefecimento e motor</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/gmb-automotive.webp" alt="" width="262" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">GMB Automotive</h3>
+          <p class="catalog__desc">
+            Bombas d’água, bombas de óleo, radiadores, kits de distribuição, polias e
+            tensores, com cobertura para mais de 40 montadoras.
+          </p>
+          <ul class="line-tags" aria-label="Linhas atendidas">
+            <li>Leve</li>
+            <li>Utilitários</li>
+            <li>Pesada</li>
+          </ul>
+        </li>
+        <li class="catalog__item">
+          <p class="catalog__kicker">Câmbio e embreagem</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/mzk-rolamentos.webp" alt="" width="495" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">MZK Rolamentos</h3>
+          <p class="catalog__desc">
+            Componentes de reposição para câmbio e embreagem: mancais, garfos, atuadores
+            hidráulicos, eixos, cubos deslizantes e kits de reparo.
+          </p>
+          <ul class="line-tags" aria-label="Linhas atendidas">
+            <li>Utilitários</li>
+            <li>Pesada</li>
+            <li>Agrícola</li>
+          </ul>
+        </li>
+        <li class="catalog__item">
+          <p class="catalog__kicker">Peças para caminhões</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/lumer.webp" alt="" width="364" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">Lumer</h3>
+          <p class="catalog__desc">
+            Fabricante de peças para caminhões desde 1988, com produção própria: quinta
+            roda, tensores, borrachas e outros componentes essenciais da linha pesada.
+          </p>
+          <ul class="line-tags" aria-label="Linhas atendidas">
+            <li>Pesada</li>
+          </ul>
+        </li>
+        <li class="catalog__item">
+          <p class="catalog__kicker">Suspensão e direção</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/driveway.webp" alt="" width="296" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">Driveway</h3>
+          <p class="catalog__desc">
+            Pivôs, bandejas, terminais de direção, barras axiais, barras de direção e de
+            ligação, bieletas e braços oscilantes.
+          </p>
+          <ul class="line-tags" aria-label="Linhas atendidas">
+            <li>Leve</li>
+            <li>Utilitários</li>
+            <li>Pesada</li>
+          </ul>
+        </li>
+        <li class="catalog__item">
+          <p class="catalog__kicker">Coxins e suspensão</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/shockbras.webp" alt="" width="320" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">Shockbras</h3>
+          <p class="catalog__desc">
+            Coxins de motor, câmbio e amortecedor, além de itens de suspensão e
+            transmissão.
+          </p>
+          <ul class="line-tags" aria-label="Linhas atendidas">
+            <li>Leve</li>
+            <li>Utilitários</li>
+            <li>Pesada</li>
+          </ul>
+        </li>
+        <li class="catalog__item">
+          <p class="catalog__kicker">Suspensão e transmissão</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/autofastar.webp" alt="" width="297" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">AutAFAstar Autopeças</h3>
+          <p class="catalog__desc">
+            Peças de suspensão, transmissão e arrefecimento, além de cabos de comando.
+          </p>
+        </li>
+        <li class="catalog__item">
+          <p class="catalog__kicker">Lubrificantes e fluidos</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/deiton-lubrificantes.webp" alt="" width="271" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">Deiton Lubrificantes</h3>
+          <p class="catalog__desc">
+            Lubrificantes, fluidos e aditivos: óleos de motor, fluidos de transmissão,
+            hidráulicos e de freio, e aditivos de radiador.
+          </p>
+          <ul class="line-tags" aria-label="Linhas atendidas">
+            <li>Leve</li>
+            <li>Pesada</li>
+            <li>Agrícola</li>
+            <li>Moto</li>
+          </ul>
+        </li>
+        <li class="catalog__item">
+          <p class="catalog__kicker">Lubrificantes industriais</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/lucheti-lubrificantes.webp" alt="" width="277" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">Lucheti Lubrificantes</h3>
+          <p class="catalog__desc">
+            Fabricante com mais de 35 anos de mercado e certificação ISO 9001:
+            lubrificantes industriais e automotivos, óleos básicos, graxas, vaselinas e
+            desmoldantes. É a fabricante da linha Deiton.
+          </p>
+        </li>
+        <li class="catalog__item">
+          <p class="catalog__kicker">Estética automotiva</p>
+          <img class="catalog__logo" src="assets/logos/clientes-opt/nitro-automotive-line.webp" alt="" width="306" height="240" loading="lazy" decoding="async">
+          <h3 class="catalog__name">Nitro Automotive Line</h3>
+          <p class="catalog__desc">
+            Produtos de estética automotiva: lavagem, descontaminação, desengraxantes,
+            limpeza e sanitização de interiores, revitalizadores de pneus e plásticos, e
+            limpeza de vidros.
+          </p>
+        </li>
+      </ul>
     </div>
   </section>
 
